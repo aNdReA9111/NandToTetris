@@ -1,0 +1,11 @@
+CHIP FlagZr{
+    IN in[16];
+    OUT zr;
+
+    PARTS:
+    Or8Way(in=in[0..7], out=out-uno);
+    Or8Way(in=in[8..15], out=out-due);
+    Or(a=out-uno, b=out-due, out=out);
+    Not(in=out, out=zr);
+
+}
